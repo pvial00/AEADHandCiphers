@@ -26,9 +26,7 @@ class H4A:
         key2 = self.cipher.kdf(key)
         h = self.sum(ad+data)
         m = self.convtochar(h)
-        print m
         m = self.cipher.encrypt(m, key2)
-        print m
         return ad+m
 
     def verify(self, data, key, mac, ad=""):
